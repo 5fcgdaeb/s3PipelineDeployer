@@ -1,4 +1,4 @@
-Here is a nice and quick **Continous Deployment** tool if your project has the following setup:
+Here is a nice and quick **Continuous Deployment** tool if your project has the following setup:
 
 - Your website is being hosted on AWS S3 Bucket (it is free!)
 - You are using Bitbucket to host your code/repository
