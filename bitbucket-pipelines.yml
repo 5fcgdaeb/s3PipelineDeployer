@@ -1,0 +1,9 @@
+image: python:3.5.1
+
+pipelines:
+  branches:
+    master:
+      - step:
+          script:
+            - pip install boto
+            - "git log --name-only --pretty=format: master HEAD^..HEAD | python s3Deployer.py -b 'buluttanapp.com'"
