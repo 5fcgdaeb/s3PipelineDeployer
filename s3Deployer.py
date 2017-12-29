@@ -19,6 +19,10 @@ def zipTheFileAndUpload(sourceFile, key):
 
 def transferFile(sourceFile, bucketFile):
 
+    if not os.path.isfile(sourceFile):
+        print("File {0} no longer exists, skipping.".format(sourceFile))
+        return
+
     if sourceFile.endswith(".js") or sourceFile.endswith(".css"):
         zipTheFileAndUpload(sourceFile, bucketFile)
     else:
@@ -45,7 +49,11 @@ def transferFilesToBucket(changedFiles, bucket):
         relativePath = fileWithoutNewLine.split("/")[-1]
         bucketFile = Key(bucket)
         bucketFile.key = relativePath
-        transferFile(fileWithoutNewLine, bucketFile)
+
+        if len(fileWithoutNewLine) < 1 or len(bucketFile.key) < 1:
+            print("Not uploading file {0}, some problem with file.".format(file))
+        else:
+            transferFile(fileWithoutNewLine, bucketFile)
 
 def main():
 

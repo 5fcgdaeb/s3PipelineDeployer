@@ -2,7 +2,7 @@ Here is a nice and quick <b>Continous Deployment</b> tool if your project has th
 - Your website is being hosted on AWS S3 Bucket (it is free!)
 - You are using Bitbucket to host your code/repository
 
-With this Bitbucket pipeline && Python script:
+With this Bitbucket pipeline and the Python script:
 - Your changes to your website are automatically deployed to the S3 Bucket
 - Only the modified files are uploaded to S3; making sure that you don't go over your AWS S3 Free Tier limits
 - CSS and Javascript files are first compressed before being uploaded
